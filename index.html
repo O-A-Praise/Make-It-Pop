@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Operation Write This If You Can</title>
+    <title>Write This If You Can</title>
     <style>
         body {
             display: flex;
@@ -12,9 +12,10 @@
             flex-direction: column;
             height: 100vh;
             margin: 0;
-            background-color: #1a1a1a;
+            background: linear-gradient(135deg, #1a1a1a, #333333);
             color: #ffffff;
             font-family: Arial, sans-serif;
+            overflow: hidden;
         }
 
         #container {
@@ -22,37 +23,51 @@
         }
 
         h1 {
-            font-size: 2.5rem;
-            margin-bottom: 10px;
+            font-size: 2.8rem;
+            margin-bottom: 15px;
+            animation: glow 2s infinite alternate;
+        }
+
+        @keyframes glow {
+            from { text-shadow: 0 0 10px #ff6666, 0 0 20px #ff6666, 0 0 30px #ff6666; }
+            to { text-shadow: 0 0 20px #ff3333, 0 0 30px #ff3333, 0 0 40px #ff3333; }
         }
 
         p {
             font-size: 1.2rem;
             margin-bottom: 30px;
+            opacity: 0.8;
         }
 
         button {
             padding: 15px 30px;
             font-size: 1.2rem;
             color: #fff;
-            background-color: #007BFF;
+            background: linear-gradient(45deg, #007BFF, #00CFFF);
             border: none;
-            border-radius: 5px;
+            border-radius: 8px;
             cursor: pointer;
-            transition: transform 0.2s, background-color 0.3s;
+            transition: transform 0.3s, box-shadow 0.3s;
         }
 
         button:hover {
-            background-color: #0056b3;
-            transform: scale(1.1);
+            transform: scale(1.2);
+            box-shadow: 0 0 20px #00cfff;
         }
 
         #message {
             display: none;
-            font-size: 2rem;
+            font-size: 3rem;
             margin-top: 20px;
             color: #ffeb3b;
             font-weight: bold;
+            animation: pop 1s ease-in-out;
+        }
+
+        @keyframes pop {
+            0% { transform: scale(0.5); opacity: 0; }
+            50% { transform: scale(1.2); opacity: 1; }
+            100% { transform: scale(1); }
         }
 
         #dissMessage {
@@ -60,9 +75,16 @@
             margin-top: 20px;
             font-size: 1.1rem;
             font-style: italic;
-            border: 1px solid #ff0000;
-            padding: 15px;
-            background-color: rgba(255, 0, 0, 0.1);
+            border: 2px dashed #ff0000;
+            padding: 20px;
+            background-color: rgba(255, 0, 0, 0.2);
+            box-shadow: 0 0 15px rgba(255, 0, 0, 0.5);
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
 
         #animation {
@@ -111,12 +133,12 @@
 </head>
 <body>
     <div id="container">
-        <h1 id="title">Operation: Write This If You Can</h1>
+        <h1 id="title">Write This If You Can</h1>
         <p id="quote">"Creativity without action is just a whisper in the void."</p>
         <button id="clickMe">Click Me</button>
-        <div id="message">Try Making THIS pop!</div>
+        <div id="message">Make it pop!</div>
         <div id="dissMessage">
-            <p>Creativity is merely a thought process. It needs us to find expression. Without tech, it's locked up in their minds, a half-baked cookie waiting for the oven."</p>
+            <p>For it is merely a thought process. It needs us (THE TECH TRIBE) to find expression. Without tech, it's locked up in their minds, a half-baked cookie waiting for the oven."</p>
             <p>- Feranmi 👑🔥</p>
         </div>
         <div id="animation"></div>
@@ -142,7 +164,7 @@
         });
 
         function generateBalloons() {
-            for (let i = 0; i < 20; i++) {
+            for (let i = 0; i < 30; i++) {
                 const balloon = document.createElement('div');
                 balloon.className = 'balloon';
                 balloon.style.left = Math.random() * 100 + '%';
@@ -153,7 +175,7 @@
         }
 
         function generateConfetti() {
-            for (let i = 0; i < 50; i++) {
+            for (let i = 0; i < 100; i++) {
                 const confetti = document.createElement('div');
                 confetti.className = 'confetti';
                 confetti.style.left = Math.random() * 100 + '%';
@@ -165,7 +187,7 @@
         }
 
         function randomColor() {
-            const colors = ['#ff6666', '#66ff66', '#6666ff', '#ffff66', '#66ffff', '#ff66ff'];
+            const colors = ['#ff6666', '#66ff66', '#6666ff', '#ffff66', '#66ffff', '#ff66ff', '#ffcc00', '#00ccff'];
             return colors[Math.floor(Math.random() * colors.length)];
         }
     </script>
