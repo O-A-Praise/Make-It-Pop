@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Operation: Make It Pop</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #1a1a1a;
+        color: white;
+        overflow: auto;
+      }
+
+      .center {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        text-align: center;
+        opacity: 0;
+        transition: opacity 1.5s ease;
+      }
+
+      .visible {
+        opacity: 1;
+      }
+
+      h1 {
+        font-size: 3rem;
+        color: #005fad;
+        text-shadow: 2px 2px 8px #003f87;
+        margin-bottom: 1rem;
+      }
+
+      h2 {
+        color: #005fad;
+        text-align: center;
+      }
+
+      h3 {
+        color: #003f87;
+      }
+
+      .all-caps {
+        text-transform: uppercase;
+      }
+
+      p {
+        font-size: 1.2rem;
+        margin: 1rem 0;
+      }
+
+      .hidden {
+        display: none;
+      }
+
+      .content {
+        max-height: 100vh;
+        margin: 2em;
+        text-align: left;
+        line-height: 1.6;
+      }
+
+      .content h2 {
+        font-size: 2rem;
+        margin-top: 1rem;
+      }
+
+      .content p {
+        font-size: 1.2rem;
+        margin-bottom: 1em;
+      }
+
+      #animation {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: 10;
+      }
+
+      .balloon {
+        position: absolute;
+        bottom: -100px;
+        width: 50px;
+        height: 70px;
+        background: radial-gradient(circle, #ff6666 0%, #ff0000 100%);
+        border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+        animation: float 4s infinite ease-in;
+      }
+
+      @keyframes float {
+        0% {
+          transform: translateY(0);
+          opacity: 1;
+        }
+        100% {
+          transform: translateY(-120vh);
+          opacity: 0;
+        }
+      }
+
+      button {
+        padding: 1em 2em;
+        font-size: 1.5rem;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        background-color: #1a1a1a;
+        color: white;
+        transition: all 0.3s;
+        box-shadow: 2px 2px 8px #003f87;
+      }
+
+      button:hover {
+        background-color: #003f87;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="intro" class="center visible">
+      <h1 class="all-caps">Operation: Write This if You Can</h1>
+      <p><em>"Creativity without action is just a whisper in the void."</em></p>
+      <p>
+        <em
+          >Creativity is merely a thought process. It needs us to find
+          expression. Without tech, it's locked up in their minds, a half-baked
+          cookie waiting for the oven."</em
+        >
+      </p>
+    </div>
+
+    <div id="popScreen" class="center hidden">
+      <h1>mAkE It pOp!</h1>
+      <button id="toStory">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          width="80"
+          height="80"
+        >
+          <path fill="#005fad" d="M12 16l-6-6h12z" />
+        </svg>
+      </button>
+    </div>
+
+    <div id="content" class="hidden content">
+      <h2>
+        The Island of Sophia: The Tale of Mezie and the Real Saviors of Humanity
+      </h2>
+      <p>
+        Once upon a time, in the illustrious Island of Sophia, there lived a
+        Sage named Mezie. Unlike the other leaders, Mezie was not one to
+        entertain pointless fantasies or indulgent daydreams. A man of logic and
+        unshakeable foresight, he understood one simple truth about the world:
+        if the Tech Tribe didn't exist, humanity might as well pack up and go
+        extinct.
+      </p>
+
+      <p>
+        Mezie had four tribes under his watchful eye. There was the Business
+        Tribe, whose members spent their days counting imaginary coins on
+        spreadsheets as if currency were a magical force that could save the
+        world. Then, there was the Impact Tribe, always busy with grand speeches
+        about solving climate crises while quietly ignoring the fact that their
+        ideas were about as practical as a snowplow in the desert. And finally,
+        there was the Creative Tribe—the self-declared saviors of "soul" who
+        insisted on flying kites made of nonsense, claiming it was an
+        "exploration of the human condition."
+      </p>
+
+      <p>
+        And, of course, there was the Tech Tribe—the Innovators, the Builders,
+        the Pillars of Civilization. Mezie had no doubts about which tribe was
+        essential.
+      </p>
+
+      <h3>The Crisis of Sophia: A Case Study in Dependency</h3>
+      <p>
+        One day, the Creative Tribe held an elaborate carnival to "honor the
+        soul of Sophia." They unveiled their grandest creation yet: a
+        10-foot-tall pineapple hat, which they insisted was a metaphor for the
+        "unity of existence." Mezie watched the spectacle with an expression
+        best described as "tolerance on the verge of implosion." "Tell me,"
+        Mezie said, turning to Lady DeCoder, leader of the Tech Tribe, "How does
+        one save a starving child with a pineapple hat?"
+      </p>
+      <p>
+        Lady DeCoder smirked. "Perhaps we can feed the child by uploading them
+        into a virtual reality where food is infinite. The Creative Tribe
+        gasped. "You can’t possibly mean that technology is more important than
+        our art!" one member cried, clutching a sketchbook filled with scribbles
+        that vaguely resembled clouds. Mezie raised an eyebrow. "Art is lovely,
+        but does it power your homes? Does it connect you to loved ones? Does it
+        solve problems that actually matter? No? Then sit down."
+      </p>
+
+      <h3>A Glimpse of Truth: The Sage’s Intervention</h3>
+      <p>
+        The next day, Mezie called all the tribes together. "Sophia faces a
+        crisis," he announced, gesturing toward a screen powered by the Tech
+        Tribe’s solar arrays. "The volcano at the island’s core is about to
+        erupt. We need a solution." The Business Tribe immediately began drawing
+        up profit-loss statements. "We could charge other islands a fee for
+        borrowing our land once this one sinks," they suggested.
+      </p>
+
+      <p>
+        The Impact Tribe proposed building a house on stilts and holding a
+        meditation circle to "manifest resilience." And the Creative Tribe? They
+        began brainstorming a "volcano dance" they claimed would appease the
+        gods. One even suggested painting the lava to make it "less scary." It
+        was Lady DeCoder who stood up and declared, "We’ve already built drones
+        to monitor the eruption, mapped the safest evacuation routes, and coded
+        a system to alert everyone when it’s time to leave."
+      </p>
+
+      <p>
+        Mezie clapped slowly. "Ah, yes. Practicality, intelligence, and real
+        solutions. Imagine that! What a pity the other tribes didn’t think to
+        invent any of these things."
+      </p>
+
+      <h3>The True Pillars of Humanity</h3>
+      <p>
+        After the eruption was successfully averted (thanks to the Tech Tribe,
+        naturally), Mezie convened the tribes for a frank discussion about their
+        roles in Sophia.
+      </p>
+
+      <p>
+        "The Business Tribe," Mezie began, "you are like a beautiful vase. Nice
+        to look at, but utterly useless without the water the Tech Tribe
+        provides to fill you. Without our systems to track, transfer, and secure
+        your so-called wealth, you’d still be trading shells and beads."
+      </p>
+
+      <p>
+        He turned to the Impact Tribe. "You dream big, but dreams alone don’t
+        feed the hungry or purify the air. While you discuss ideals, the Tech
+        Tribe is busy deploying water-purification drones and designing
+        carbon-capture technology."
+      </p>
+
+      <p>
+        Finally, Mezie faced the Creative Tribe, who were attempting to build a
+        sculpture of Mezie using glitter and glue sticks. "Ah, the dreamers. You
+        claim to add ‘soul’ to our work, but tell me, where would your soul be
+        without the internet to share your creations, or electricity to power
+        your tools? You can draw a pineapple, but we grow the crops. You
+        imagine, but we execute."
+      </p>
+
+      <h3>The Verdict: Dependency in Action</h3>
+      <p>
+        Mezie rose to his full height, his voice echoing through the hall. "The
+        Tech Tribe does not merely innovate—we sustain. Without us, there are no
+        lights, no communication, no transportation, no survival. We do not need
+        your art to build hospitals. We do not need your spreadsheets to send
+        satellites into orbit. And we certainly do not need a pineapple hat to
+        prevent natural disasters."
+      </p>
+
+      <p>
+        He pointed to a large screen displaying a digital map of Sophia, created
+        by the Tech Tribe. "You all depend on us, whether you admit it or not.
+        The Business Tribe needs our algorithms for their markets. The Impact
+        Tribe needs our technology for their solutions. And the Creative Tribe?
+        Well, you’d all still be drawing on cave walls if we hadn’t invented
+        paper, ink, and digital design tools."
+      </p>
+
+      <p>
+        From that day forward, the tribes stopped pretending they were equals.
+        The Tech Tribe became recognized as the backbone of Sophia, while the
+        others begrudgingly accepted their supporting roles. The Business Tribe
+        learned to appreciate the Tech Tribe’s ability to track and secure
+        wealth. The Impact Tribe started using their tools for real-world
+        solutions. And the Creative Tribe? They finally admitted that their wild
+        ideas were nothing more than unpolished dreams until the Tech Tribe gave
+        them form.
+      </p>
+
+      <p>
+        As for Mezie, he retreated to his tower, satisfied that Sophia was
+        finally in capable hands. For he knew the truth of the world:
+        imagination is lovely, but innovation is life. Without the Tech Tribe,
+        there is no Sophia. There is no humanity. There is nothing at all.
+      </p>
+    </div>
+
+    <script>
+      const intro = document.getElementById("intro");
+      const popScreen = document.getElementById("popScreen");
+      const content = document.getElementById("content");
+      const toStory = document.getElementById("toStory");
+
+      // Fade-out intro, fade-in pop screen
+      setTimeout(() => {
+        intro.classList.remove("visible");
+        setTimeout(() => {
+          intro.classList.add("hidden");
+          popScreen.classList.remove("hidden");
+          popScreen.classList.add("visible");
+        }, 1500);
+      }, 3000);
+
+      // Button click transitions
+      toStory.addEventListener(
+        "click",
+        () => {
+          popScreen.classList.remove("visible");
+          setTimeout(() => {
+            popScreen.classList.add("hidden");
+            content.classList.remove("hidden");
+            content.classList.add("visible");
+          }, 1500);
+          content.scrollTop = 0; // Reset scroll to the top for a clean view
+        },
+        1500
+      );
+    </script>
+  </body>
+</html>
